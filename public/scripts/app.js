@@ -18,21 +18,48 @@ var template = React.createElement(
 	)
 );
 
+/**
+ * Arrow functions and event
+ */
+
+var count = 0;
+
+var addOne = function addOne() {
+	console.log('addOne');
+};
+
+var minusOne = function minusOne() {
+	console.log('minusOne');
+};
+
+var reset = function reset() {
+	console.log('reset');
+};
 var templateTwo = React.createElement(
 	'div',
 	null,
 	React.createElement(
 		'h1',
 		null,
-		'UBK'
+		'Count : ',
+		count
 	),
 	React.createElement(
-		'p',
-		null,
-		' 23 '
+		'button',
+		{ onClick: addOne, className: 'button' },
+		' +1 '
+	),
+	React.createElement(
+		'button',
+		{ onClick: minusOne, className: 'button' },
+		' -1 '
+	),
+	React.createElement(
+		'button',
+		{ onClick: reset, className: 'button' },
+		' reset '
 	)
 );
 
 var appRoot = document.getElementById('app');
-
 ReactDOM.render(templateTwo, appRoot);
